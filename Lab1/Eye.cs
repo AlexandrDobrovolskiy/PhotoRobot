@@ -6,9 +6,6 @@ namespace Lab1
 {
     abstract class Eye : PartOfFace
     {
-        public override void Draw(Canvas canvas, Point startPoint)
-        {
-            DrawBehaviour.Draw(canvas, Image, startPoint);
-        }
+        // there should be for example closeBehavior or something else wich defines an eye
     }
 }

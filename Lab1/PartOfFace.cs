@@ -9,6 +9,9 @@ namespace Lab1
         protected Canvas Image;
         protected IDrawBehaviour DrawBehaviour;
 
-        public abstract void Draw(Canvas canvas, Point startPoint);
+        public void Draw(Canvas canvas, Point startPoint)
+        {
+            DrawBehaviour.Draw(canvas, Image, startPoint);
+        }
     }
 }
