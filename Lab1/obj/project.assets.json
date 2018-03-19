@@ -670,15 +670,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alexandr\\Source\\Repos\\Lab1\\Lab1\\Lab1.csproj",
+      "projectUniqueName": "c:\\Users\\Alexandr\\Source\\Repos\\Lab1\\Lab1\\Lab1.csproj",
       "projectName": "Lab1",
-      "projectPath": "C:\\Users\\Alexandr\\Source\\Repos\\Lab1\\Lab1\\Lab1.csproj",
+      "projectPath": "c:\\Users\\Alexandr\\Source\\Repos\\Lab1\\Lab1\\Lab1.csproj",
       "packagesPath": "C:\\Users\\Alexandr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alexandr\\Source\\Repos\\Lab1\\Lab1\\obj\\",
+      "outputPath": "c:\\Users\\Alexandr\\Source\\Repos\\Lab1\\Lab1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
