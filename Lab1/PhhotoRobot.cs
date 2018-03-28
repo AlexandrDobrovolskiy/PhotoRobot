@@ -6,48 +6,47 @@ namespace Lab1
 {
     class PhhotoRobot
     {
-        public Canvas _canvas;
-        private Skin _skin;
-        private List<Ear> _ears;
-        private List<Eye> _eyes;
-        private Mouse _mouse;
-        private Nose _nose;
+        public Canvas Canvas;
+        public Skin Skin;
+        public List<Ear> Ears;
+        public List<Eye> Eyes;
+        public Mouse Mouse;
+        public Nose Nose;
 
-        public PhhotoRobot(Canvas canvas, Skin skin, List<Ear> ears, List<Eye> eyes, Mouse mouse, Nose nose)
+        public PhhotoRobot(Canvas canvas, Skin skin, List<Ear> ears = null, List<Eye> eyes = null, Mouse mouse = null,
+            Nose nose = null)
         {
-            _canvas = canvas;
-            _skin = skin;
-            _ears = ears;
-            _eyes = eyes;
-            _mouse = mouse;
-            _nose = nose;
-
-        }
-
-        public PhhotoRobot(Canvas canvas, Skin skin, List<Eye> eyes, List<Ear> ears)
-        {
-            _eyes = eyes;
-            _canvas = canvas;
-            _ears = ears;
-            _skin = skin;
+            Canvas = canvas;
+            Skin = skin;
+            Ears = ears;
+            Eyes = eyes;
+            Mouse = mouse;
+            Nose = nose;
             Update();
+
         }
 
         public void Update()
         {
-            _skin.Draw(_canvas, new Point(_skin.ConnectionPoint.PosY,_skin.ConnectionPoint.PosX));
+            Skin.Draw(Canvas, Skin.ConnectionPoint);
+            Mouse?.Draw(Canvas, Skin.MouseStartPoint);
+            Nose?.Draw(Canvas, Skin.NoseStartPoint);
             int i = 0;
-            foreach (var eye in _eyes)
-            {
-                eye.Draw( _canvas, _skin.EyesStartPoints[i]);
-                i++;
-            }
+
+            if(Eyes != null)
+                foreach (var eye in Eyes)
+                {
+                    eye.Draw( Canvas, Skin.EyesStartPoints[i]);
+                    i++;
+                }
             i = 0;
-            foreach (var ear in _ears)
-            {
-                ear.Draw( _canvas , _skin.EarsStartPoints[i]);
-                i++;
-            }
+
+            if(Ears != null)
+                foreach (var ear in Ears)
+                {
+                    ear.Draw( Canvas , Skin.EarsStartPoints[i]);
+                    i++;
+                }
 
         }
     }

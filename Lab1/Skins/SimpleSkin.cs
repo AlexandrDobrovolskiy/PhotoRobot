@@ -6,10 +6,11 @@ namespace Lab1
 {
     class SimpleSkin : Skin
     {
+        private const int Offset = 10; 
         public SimpleSkin(IDrawBehaviour drawBehaviour) 
         {
             DrawBehaviour = drawBehaviour;
-            ConnectionPoint = new Point(20,20);
+            ConnectionPoint = new Point(Offset, Offset);
             Image = new Canvas(new[,]
             {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -37,14 +38,16 @@ namespace Lab1
             });
             EyesStartPoints = new List<Point>(new[]
             {
-                new Point(25, 23),
-                new Point(25, 35)
+                new Point(Offset + 5, Offset + 3),
+                new Point(Offset + 5, Offset + 15)
             });
             EarsStartPoints = new List<Point>(new []
             {
-                new Point(24, 19), 
-                new Point(24 ,20 + this.Image.Cells.GetLength(1)), 
+                new Point(Offset + 4, Offset - 1), 
+                new Point(Offset + 4 ,Offset + this.Image.Cells.GetLength(1)), 
             });
+            MouseStartPoint = new Point(Offset + 15, Offset + 7);
+            NoseStartPoint = new Point(Offset + 10, Offset + 10);
             
         }
 
